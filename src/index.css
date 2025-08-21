@@ -1,1 +1,5 @@
+/* Here can be all theming of project according the design */
 @import "tailwindcss";
+@theme {
+    --color-sidebar-active: #3B486D;
+}
