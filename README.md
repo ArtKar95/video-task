@@ -68,3 +68,67 @@ export default tseslint.config([
 ])
 ```
 # video-task
+
+
+### Version
+
+> 1.0.0
+
+# Video/Movies Tool
+
+## Environment variables configuration
+
+```bash
+$ cp .env.example .env
+```
+
+### Instalation
+
+```
+environment -> node v/22
+```
+
+```bash
+$ pnpm install
+```
+
+### Basic usage
+
+The app will run based on environment variables. e.g. dev/stage/prod
+
+```bash
+# dev server with hot reload at http://localhost:5173
+$ pnpm run dev
+```
+
+Navigate to [http://localhost:5173](http://localhost:5173). The app will automatically reload if you change any of the source files.
+
+### Build
+
+Run `build` to build the project. The build artifacts will be stored in the `build/` directory.
+
+```bash
+# build for production with minification
+$ pnpm run build
+```
+
+## What's included
+
+Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+
+```
+coreui-pro-react-admin-template-starter
+├── public/          # static files
+│   └── assets.      # Images, icons, etc
+│
+├── src/             # project root
+│   ├── app/         # global settings and configuration.
+│   ├── components/  # common components.
+│   ├── features/    # specific page UI, data state management, types etc
+│   ├── layouts/     # layout containers
+│   ├── pages/       # application views
+│   ├── index.tsx    #
+│
+└── package.json
+│   ├── ...
+```
