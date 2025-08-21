@@ -1,0 +1,6 @@
+{
+  "path": "@digitalroute/cz-conventional-changelog-for-jira",
+  "jiraPrefix": "RD",
+  "jiraOptional": true,
+  "skipScope": false
+}
