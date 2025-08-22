@@ -1,7 +1,7 @@
 import type { Dispatch } from "react";
 import { NavLink } from "react-router-dom";
-import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import { appRouts } from "@/app/routes/appRoutes";
 
 interface IProps {
