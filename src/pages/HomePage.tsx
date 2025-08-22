@@ -8,6 +8,9 @@ import type { IVideo } from "@/features/Home/types";
 import { TrendingCarousel } from "@/features/Home/TrendingCarousel";
 
 const HomePage: React.FC = () => {
+  //!We can also create index file in the Home and do this actions there,
+  //!  and just import and export it from here
+
   const { data, isLoading, refetch } = useGetVideosQuery();
   const [setFeatured] = useSetFeaturedMutation();
   const { featured, trending } = data || {};

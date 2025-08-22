@@ -1,6 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { IVideo } from "./types";
 import jsonData from "@/data/movies.json";
+import type { IVideo } from "./types";
+import { transformVideoData } from "./helpers";
+
+//!I can just take from json and use, but decided to simulate fetch with delay with RTK
 
 const simulateFetch = async <T>(data: T, delay = 300): Promise<T> =>
   new Promise((resolve) => setTimeout(() => resolve(data), delay));
@@ -23,33 +26,11 @@ export const videosApi = createApi({
           }
         }
 
-        const featured: IVideo = {
-          id: featuredData.Id,
-          title: featuredData.Title,
-          coverImage: featuredData.CoverImage,
-          titleImage: featuredData.TitleImage,
-          date: featuredData.Date,
-          releaseYear: featuredData.ReleaseYear,
-          mpaRating: featuredData.MpaRating,
-          category: featuredData.Category,
-          duration: +featuredData.Duration,
-          videoUrl: featuredData.VideoUrl,
-          description: featuredData.Description,
-        };
+        const featured: IVideo = transformVideoData(featuredData);
 
-        const trending: IVideo[] = jsonData.TendingNow.map((v) => ({
-          id: v.Id,
-          title: v.Title,
-          coverImage: v.CoverImage,
-          titleImage: v.TitleImage,
-          date: v.Date,
-          releaseYear: v.ReleaseYear,
-          mpaRating: v.MpaRating,
-          category: v.Category,
-          duration: +v.Duration,
-          videoUrl: v.VideoUrl,
-          description: v.Description,
-        }));
+        const trending: IVideo[] = jsonData.TendingNow.map((video) =>
+          transformVideoData(video)
+        );
 
         const data = await simulateFetch({ featured, trending });
         return { data };

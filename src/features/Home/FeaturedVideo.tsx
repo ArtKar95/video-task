@@ -71,7 +71,7 @@ export const FeaturedVideo = ({ featured }: IProps) => {
             size="large"
             icon={<PlayCircleFilled />}
             style={{ padding: "1.5rem 3rem" }}
-            onClick={() => setShowVideo(true)}
+            onClick={() => setShowVideo((prev) => !prev)}
           >
             Play
           </Button>
